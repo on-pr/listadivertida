@@ -5,13 +5,14 @@ const CATEGORIES = [
 ];
 
 const ITEMS = [
-  ['🍝','Cota Rolo de Macarrão da Noiva','R$ 30','brincadeiras'],
-  ['🪖','Cota Capacete do Noivo','R$ 30','brincadeiras'],
-  ['🍺','Cota Cerveja do Noivo','R$ 40','brincadeiras'],
+  ['🍝','cota Rolo de macarrão para a noiva utilizar quando necessário','R$ 30','brincadeiras'],
+  ['⛑️','Cota Capacete contra rolo de macarrão','R$ 30','brincadeiras'],
+  ['🧰','Cota Marido Faz-Tudo – "Para equipar o noivo nas pequenas manutenções da casa."','R$ 40','brincadeiras'],
   ['💄','Cota Batom da Noiva','R$ 30','brincadeiras'],
   ['☕','Cota Café da Manhã dos Recém-Casados','R$ 50','brincadeiras'],
   ['🍕','Cota Noite da Pizza','R$ 80','brincadeiras'],
   ['🍷','Cota Vinho para Comemorar','R$ 100','brincadeiras'],
+  ['🐷','Cota Uma ajudinha para realizar os sonhos do casal','R$ 100','brincadeiras'],
 
   ['🍦','Cota Sorvete na Praia','R$ 20','luademel'],
   ['🥂','Cota Drink da Lua de Mel','R$ 50','luademel'],
