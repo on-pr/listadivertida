@@ -30,7 +30,6 @@ const ITEMS = [
   ['💞','Cota Amor sem Limites','Valor livre','novolar'],
   ['🎁','Presente do Coração','Valor livre','novolar'],
 ].map(([icon,name,value,cat])=>({icon,name,value,category:cat}));
-
 function render(){
   const app = document.getElementById('app');
   let html = '';
@@ -53,3 +52,39 @@ function render(){
   app.innerHTML = html;
 }
 render();
+
+const WHATSAPP_NUMBER = '5528999453745';
+
+function getGuestData(){
+  const name = document.getElementById('guestNameInput').value.trim();
+  const cota = document.getElementById('guestCotaSelect').value;
+  if(!name){ alert('Por favor, digite seu nome.'); return null; }
+  if(!cota){ alert('Selecione a cota que você escolheu.'); return null; }
+  return { name, cota };
+}
+
+function setupConfirmForm(){
+  const select = document.getElementById('guestCotaSelect');
+  CATEGORIES.forEach(cat=>{
+    const group = document.createElement('optgroup');
+    group.label = cat.title;
+    ITEMS.filter(i=>i.category===cat.id).forEach(i=>{
+      const opt = document.createElement('option');
+      opt.value = `${i.icon} ${i.name} (${i.value})`;
+      opt.textContent = `${i.icon} ${i.name} — ${i.value}`;
+      group.appendChild(opt);
+    });
+    select.appendChild(group);
+  });
+
+  document.getElementById('sendConfirmBtn').addEventListener('click', ()=>{
+    const data = getGuestData();
+    if(!data) return;
+    const message = `Olá! Me chamo ${data.name} e acabei de fazer o Pix da: ${data.cota} 🎁`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  });
+}
+
+setupConfirmForm();
+
