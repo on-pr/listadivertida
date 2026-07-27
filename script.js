@@ -30,7 +30,6 @@ const ITEMS = [
   ['💞','Cota Amor sem Limites','Valor livre','novolar'],
   ['🎁','Presente do Coração','Valor livre','novolar'],
 ].map(([icon,name,value,cat])=>({icon,name,value,category:cat}));
-
 function render(){
   const app = document.getElementById('app');
   let html = '';
@@ -88,5 +87,4 @@ function setupConfirmForm(){
 }
 
 setupConfirmForm();
-
 
